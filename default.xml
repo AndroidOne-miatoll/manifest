@@ -1042,4 +1042,10 @@
   </project>
   <!-- END open-source projects -->
 
+<!-- Track our Fork repos -->
+  <include name="remove.xml" />
+  <include name="hardware.xml" />
+  <include name="androidone.xml" />
+<!-- Track our Fork repos -->
+
 </manifest>

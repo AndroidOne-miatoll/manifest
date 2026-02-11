@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="androidone"
+           fetch="https://github.com/AndroidOne-miatoll"
+           sync-c="true"
+           sync-j="4"
+           revision="16-qpr2" />
+
+  <remote  name="clover-gitlab"
+           fetch="https://gitlab.com/thecloverproject"
+           sync-c="true"
+           sync-j="4"
+           revision="16-qpr2" />
+
+  <!-- art -->
+  <project path="art" name="art" groups="pdk" remote="androidone" />
+
+  <!-- bionic -->
+  <project path="bionic" name="bionic" groups="pdk" remote="androidone" />
+
+  <!-- bootable -->
+  <project path="bootable/deprecated-ota" name="bootable_deprecated-ota" groups="pdk-cw" remote="androidone" />
+  <project path="bootable/recovery" name="bootable_recovery" groups="pdk" remote="androidone" />
+
+  <!-- build -->
+  <project path="build/make" name="build" groups="pdk,sysui-studio" remote="androidone" >
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/release" name="build_release" groups="pdk,tradefed,sysui-studio" remote="androidone" />
+  <project path="build/soong" name="build_soong" groups="pdk,tradefed,sysui-studio" remote="androidone" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+
+  <!-- external -->
+  <project path="external/bouncycastle" name="external_bouncycastle" groups="pdk" remote="androidone" />
+  <project path="external/skia" name="external_skia" groups="pdk,qcom_msm8x26" remote="androidone" />
+
+  <!-- frameworks -->
+  <project path="frameworks/av" name="frameworks_av" groups="pdk" remote="androidone" />
+  <project path="frameworks/base" name="frameworks_base" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="androidone" />
+  <project path="frameworks/native" name="frameworks_native" groups="pdk" remote="androidone" />
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" groups="pdk,sysui-studio" remote="androidone" />
+
+  <!-- hardware -->
+  <project path="hardware/lineage/interfaces" name="hardware_lineage_interfaces" remote="androidone" />
+
+  <!-- packages -->
+  <project path="packages/apps/ParanoidSense" name="packages_apps_ParanoidSense" remote="androidone" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs,pdk-cw-tvc" remote="androidone" />
+  <project path="packages/apps/Updater" name="packages_apps_Updater" remote="androidone" />
+  <project path="packages/modules/Connectivity" name="packages_modules_Connectivity" groups="pdk-cw-fs,pdk-fs" remote="androidone" />
+  <project path="packages/modules/Permission" name="packages_modules_Permission" groups="pdk-cw-fs,pdk-fs" remote="androidone" />
+  <project path="packages/services/Telecomm" name="packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" remote="androidone" />
+  <project path="packages/services/Telephony" name="packages_services_Telephony" groups="pdk-cw-fs,pdk-fs" remote="androidone" />
+
+  <!-- sepolicy -->
+  <project path="device/lineage/sepolicy" name="device_lineage_sepolicy" remote="androidone" />
+
+  <!-- system -->
+  <project path="system/core" name="system_core" groups="pdk" remote="androidone" />
+  <project path="system/libhwbinder" name="system_libhwbinder" groups="pdk" remote="androidone" />
+  <project path="system/memory/libmeminfo" name="system_memory_libmeminfo" groups="pdk" remote="androidone" />
+  <project path="system/sepolicy" name="system_sepolicy" groups="pdk" remote="androidone" />
+  <project path="system/update_engine" name="system_update_engine" groups="pdk" remote="androidone" />
+
+  <!-- vendor -->
+  <project path="vendor/certification" name="vendor_certification" remote="androidone" />
+  <project path="vendor/aosp" name="vendor_aosp" remote="androidone" />
+  <project path="vendor/gms" name="vendor_gms_16-qpr-2" remote="clover-gitlab" clone-depth="1" />
+
+</manifest>
